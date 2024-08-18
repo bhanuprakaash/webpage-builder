@@ -1,0 +1,369 @@
+.hero-section {
+  position: relative;
+  padding: 5rem 1rem; 
+}
+
+.hero-settings-btn {
+  position: absolute;
+  top: 1rem; 
+  right: 1rem; 
+  z-index: 10;
+  display: none; 
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section:hover .hero-settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.hero-title-wrapper {
+  position: relative; 
+  display: inline-block;
+}
+
+.hero-title {
+  outline: none;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title-control {
+  position: absolute;
+  top: 150px; 
+  left: 5%;
+  display: none;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); 
+  padding: 10px;
+  z-index: 10; 
+}
+
+.hero-title:focus-within + .hero-title-control {
+  display: block;
+}
+
+.font-size-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+.font-size-picker-button {
+  margin: 2px 0;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.hero-subtitle {
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+
+.hero-button {
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.hero-menu-box {
+  position: absolute;
+  top: 5%; 
+  right: 2%;
+  z-index: 2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  width: max-content;
+  max-width: 300px;
+  overflow: auto;
+  display: none; 
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: none;
+}
+
+.hero-section:hover .hero-menu-box {
+  display: block; 
+}
+
+.menu-part {
+  margin-bottom: 1rem;
+}
+
+.menu-part label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.menu-part input[type="range"] {
+  margin-left: 0.5rem;
+}
+
+.menu-part input[type="file"] {
+  margin-top: 0.5rem;
+}
+
+.menu-part input[type="color"] {
+  margin-top: 0.5rem;
+}
+
+.hero-section .reverse .row {
+  flex-direction: row-reverse; 
+}
+
+
+.hero-section .reverse .col-md-6 {
+  order: 2; 
+}
+
+.hero-section .reverse .col-md-6:last-of-type {
+  order: 1; 
+}
+
+
+.hero-menu-checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.hero-menu-checkbox label {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.hero-menu-checkbox input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-left: 10px;
+}
+
+.hero-menu-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.hero-menu-range label {
+  margin-right: 10px;
+  flex: 1;
+}
+
+.hero-menu-range input[type="range"] {
+  width: 150px; 
+  margin-right: 10px;
+}
+
+.hero-menu-range span {
+  min-width: 30px;
+  text-align: right;
+}
+
+.hero-menu-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hero-menu-radio label {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 16px; 
+}
+
+.hero-menu-radio input[type="radio"] {
+  margin-left: auto;
+  margin-right: 5px; 
+}
+
+.hero-file-upload-wrapper input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; 
+  cursor: pointer;
+}
+
+.hero-file-upload-wrapper span {
+  position: relative;
+  z-index: 1; 
+}
+
+.hero-file-upload-wrapper:hover {
+  background-color: #0056b3; 
+}
+.hero-title-container {
+  position: relative;
+}
+
+.title-manipulation-buttons {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  transform: translateY(-10px);
+  z-index: 10;
+  background: white;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; 
+}
+
+.hero-title-container:focus-within .title-manipulation-buttons {
+  display: flex; 
+}
+
+.hero-pickers {
+  position: relative;
+  display: flex;
+  gap: 10px; 
+}
+.hero-color-picker,
+.hero-font-size-picker {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 11; 
+}
+
+.hero-color-picker {
+  top: 100%;
+  right: 0;
+}
+
+.hero-font-size-picker {
+  top: 100%;
+  right: 0;
+}
+
+.hero-font-size-picker select {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: white;
+  box-sizing: border-box;
+}
+
+.hero-subtitle-container {
+  position: relative;
+}
+
+.hero-subtitle {
+  border: none; 
+  background: transparent; 
+  box-sizing: border-box;
+  overflow: hidden; 
+  resize: none; 
+  white-space: pre-wrap;
+}
+
+.subtitle-manipulation-buttons {
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  transform: translateY(-10px);
+  z-index: 10;
+  background: white;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; 
+}
+
+.hero-subtitle-container:focus-within .subtitle-manipulation-buttons {
+  display: flex; 
+}
+
+.hero-button-container {
+  position: relative;
+}
+.button-manipulation-buttons {
+  position: absolute;
+  bottom: 110%;
+  left: 0;
+  transform: translateY(-10px);
+  z-index: 10;
+  background: white;
+  padding: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; 
+}
+.hero-button-container:focus-within .button-manipulation-buttons {
+  display: flex; 
+}

@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+/* App.css */
+body,html{
+  height: 100%;
+  margin: 0;
+}
+.app-container {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+  border: none;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.canvas-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  transition: width 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.open-panel-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1100; /* Make sure it stays on top of other elements */
+  font-size: 35px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.panel-open .canvas-container {
+  width: 30%;
+}
+
+.panel-open .side-panel {
+  width: 70%;
+}
+.canvas {
+  flex-grow: 1; /* Ensure canvas expands to fill available space */
+}
+/* App.css */
+.panel-open .canvas {
+  width: 100%; /* Full width when panel is open */
+  max-width: 100%; /* Ensure it doesn't exceed the container */
+}
+
+@media (min-width: 768px) {
+  .panel-open .canvas {
+    width: 30%; /* 30% width for desktop preview */
   }
 }
+/* App.css */
+.panel-open .canvas {
+  transform: scale(0.3); /* Scale down to fit 30% width */
+  transform-origin: top left;
+  width: 300%;
+  position: absolute;
+}
+.panel-open .canvas {
+  zoom: 1.5; /* Zoom in the content */
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.side-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:20px;
+  padding: 20px;
+  width: 25%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border-left: 2px solid #ccc;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.panel-open .side-panel {
+  width: 70%;
+}
+
+.canvas {
+  min-height: 500px;
+  width: 100%;
+  margin: 20px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  height: 100vh;
+}
+
+.draggable-component {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  cursor: grab;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100px; /* Adjust width according to your need */
+  height: 200px;
+  width: 200px;
+  margin-top: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.component-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.draggable-component p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cancel-button-in-side-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
 }
