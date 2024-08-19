@@ -330,6 +330,7 @@ function NavbarComponent() {
             <div
               className={`collapse navbar-collapse justify-content-${menuAlignment}`}
               id="navbarNav"
+              style={{marginRight:"100px"}}
             >
               {navLinksVisible && (
                 <ul className="navbar-nav">
@@ -484,6 +485,13 @@ function NavbarComponent() {
                       </div>
                     </li>
                   ))}
+                  <li className="nav-item " style={{position:"absolute",right:"20px",top:"23px"}}>
+                    <button
+                      className="btn btn-md profile-item"
+                    >
+                      Start Now!
+                    </button>
+                  </li>
                 </ul>
               )}
             </div>

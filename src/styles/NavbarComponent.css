@@ -7,7 +7,19 @@
 .nav-item-container {
   position: relative;
 }
-
+.profile-item{
+    color:black;
+    font-size:17px;
+    font-weight: 500;
+    background-color: #55c2da;
+    padding: 13px 19px;
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.profile-item:hover{
+  background-color: #55c2da;
+}
 .sub-nav {
   position: absolute;
   top: 100%;

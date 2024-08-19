@@ -25,7 +25,7 @@ const HeroComponent = () => {
 
   const [button, setButton] = useState({
     text: "Get Started",
-    color: "#333333",
+    color: "black",
     fontSize: "18px",
     fontWeight: "bold",
     fontStyle: "normal",
@@ -150,7 +150,6 @@ const HeroComponent = () => {
                   >
                     {title.text}
                   </h1>
-
                   <div className="title-manipulation-buttons">
                     <button
                       className="btn btn-md me-1"
@@ -376,6 +375,8 @@ const HeroComponent = () => {
                       fontWeight: button.fontWeight,
                       backgroundColor: button.backgroundColor,
                       marginLeft: "15px",
+                      padding:"23px",
+                      borderRadius:"36px"
                     }}
                   >
                     {button.text}
@@ -511,7 +512,8 @@ const HeroComponent = () => {
             {settingsOpen && (
               <div className="hero-menu-box">
                 <div className="menu-part">
-                  <h5>Size</h5>
+                  <h5 style={{textAlign:"center"}}>Size</h5>
+                  <hr/>
                   <div className="hero-menu-checkbox">
                     <label htmlFor="full-screen">Fullscreen</label>
                     <input
@@ -522,7 +524,7 @@ const HeroComponent = () => {
                     />
                   </div>
                   <div className="hero-menu-range">
-                    <label htmlFor="hero-margin-top-range">Top Margin</label>
+                    <label htmlFor="hero-margin-top-range">Top</label>
                     <input
                       id="hero-margin-top-range"
                       type="range"
@@ -534,7 +536,7 @@ const HeroComponent = () => {
                   </div>
                   <div className="hero-menu-range">
                     <label htmlFor="hero-margin-bottom-range">
-                      Bottom Margin
+                      Bottom
                     </label>
                     <input
                       id="hero-margin-bottom-range"
@@ -567,7 +569,8 @@ const HeroComponent = () => {
                   </div>
                 </div>
                 <div className="menu-part">
-                  <h5>Show/Hide</h5>
+                  <h5 style={{textAlign:"center"}}>Show/Hide</h5>
+                  <hr/>
                   <div className="hero-menu-checkbox">
                     <label htmlFor="hero-title-checkbox">Title</label>
                     <input
@@ -597,7 +600,8 @@ const HeroComponent = () => {
                   </div>
                 </div>
                 <div className="menu-part">
-                  <h5>Background</h5>
+                  <h5 style={{textAlign:"center"}}>Background</h5>
+                  <hr/>
                   <div className="hero-menu-radio">
                     <label>Image</label>
                     <input

@@ -8,6 +8,7 @@ const SidePanel = ({ closePanel }) => {
     { name: "Navbar", image: "/images/navbar.png" },
     { name: "Hero", image: "/images/hero.png" },
     { name: "Features", image: "/images/features.png" },
+    { name:"List", image:"/images/faq.png"}
   ];
 
   return (
@@ -38,7 +39,7 @@ function DraggableComponent({ name, image }) {
 
   return (
     <div ref={drag} className="draggable-component">
-      <img src={image} alt={name} className="component-image" />
+      <img src={image} alt={name} className="component-image" style={{objectFit:"contain"}} />
       <p>{name}</p>
     </div>
   );

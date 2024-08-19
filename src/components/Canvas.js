@@ -3,6 +3,7 @@ import { useDrag, useDrop } from "react-dnd";
 import FeaturesComponent from "./templates/FeaturesComponent";
 import HeroComponent from "./templates/HeroComponent";
 import NavbarComponent from "./templates/NavbarComponent";
+import ListComponent from "./templates/ListComponent";
 import "../App.css";
 import { IoSwapVerticalSharp } from "react-icons/io5";
 
@@ -128,6 +129,8 @@ function renderComponentByName(name) {
       return <HeroComponent />;
     case "Features":
       return <FeaturesComponent />;
+    case "List":
+      return <ListComponent/>
     default:
       return null;
   }

@@ -22,18 +22,33 @@ const FeaturesComponent = () => {
   const [cards, setCards] = useState([
     {
       id: 1,
-      featureTitle: "Feature 1",
-      featureDescription: "This is the description for feature 1.",
-      image: "https://via.placeholder.com/150",
+      featureTitle: "Promotions",
+      featureDescription: "Enhance your marketing efforts with tools designed to maximize promotion impact. Reach your audience effectively and see the results soar.",
+      image: "/images/promotion.png",
       buttonText: "Learn More",
     },
     {
       id: 2,
-      featureTitle: "Feature 2",
-      featureDescription: "This is the description for feature 2.",
-      image: "https://via.placeholder.com/150",
+      featureTitle: "Branding",
+      featureDescription: "Create a strong and memorable brand identity with our intuitive branding tools. Establish your presence with a cohesive and professional look.",
+      image: "/images/branding.png",
       buttonText: "Learn More",
     },
+    {
+      id: 3,
+      featureTitle: "Advertisement",
+      featureDescription: "Explore a world of creativity with our range of toys designed to inspire and entertain. From toddlers to teens, there's something for everyone.",
+      image: "/images/teddy.png",
+      buttonText: "Learn More",
+    },
+    {
+      id: 4,
+      featureTitle: "Technology",
+      featureDescription: "Step into the future with cutting-edge digital experiences that captivate and engage. Elevate your project with seamless technology integration.",
+      image: "/images/5616698.jpg",
+      buttonText: "Learn More",
+    },
+
   ]);
   const [featureSettingsOpen, setFeatureSettingsOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
@@ -55,6 +70,8 @@ const FeaturesComponent = () => {
   const [showFeatureColorPicker, setShowFeatureColorPicker] = useState(false);
   const [showFeatureFontSizePicker, setShowFeatureFontSizePicker] =useState(false);
   const [showFeatureColorPickerSubtitle, setShowFeatureColorPickerSubtitle] =useState(false);
+  const [featureCardTitleFontSize,setFeatureCardTitleFontSize]= useState("30px");
+  const [featureCardContentFontSize,setFeatureCardContentFontSize] = useState("16px");
   const [
     showFeatureFontSizePickerSubtitle,
     setShowFeatureFontSizePickerSubtitle,
@@ -120,7 +137,7 @@ const FeaturesComponent = () => {
 
   const toggleFeatureSettings = () =>
     setFeatureSettingsOpen(!featureSettingsOpen);
-
+  
   const addCard = (index) => {
     const newCard = {
       id: Date.now(),
@@ -511,7 +528,7 @@ const FeaturesComponent = () => {
                   onClick={() => triggerFileUpload(index)}
                   style={{
                     width: "100%",
-                    height: "300px",
+                    height: "400px",
                     borderRadius: "15px",
                   }}
                 />
@@ -523,7 +540,7 @@ const FeaturesComponent = () => {
                       contentEditable
                       suppressContentEditableWarning
                       onBlur={(e) => handleTitleBlur(e, index)}
-                      style={{ textAlign: alignment, fontSize: "24px" }}
+                      style={{ textAlign: alignment, fontSize: featureCardTitleFontSize }}
                     >
                       {card.featureTitle}
                     </h5>
@@ -532,7 +549,7 @@ const FeaturesComponent = () => {
                     <p
                       className="card-text"
                       onBlur={(e) => handleDescriptionBlur(e, index)}
-                      style={{ textAlign: alignment, fontSize: "16px" }}
+                      style={{ textAlign: alignment, fontSize: featureCardContentFontSize }}
                       contentEditable
                       suppressContentEditableWarning
                     >
@@ -546,10 +563,11 @@ const FeaturesComponent = () => {
                         style={{
                           backgroundColor: "#55c2da",
                           border: "none",
-                          padding: "8px",
-                          color: "#333",
+                          padding: "19px",
+                          color: "black",
                           fontWeight: "bold",
-                          fontSize: "16px",
+                          fontSize: "18px",
+                          borderRadius:"36px"
                         }}
                         contentEditable
                         suppressContentEditableWarning
@@ -606,7 +624,8 @@ const FeaturesComponent = () => {
           {featureSettingsOpen && (
             <div className="feature-adjustments">
               <div className="feature-adjustment-part">
-                <h5>Size</h5>
+                <h5 style={{textAlign:"center"}}>Size</h5>
+                <hr/>
                 <div className="form-checkbox">
                   <label htmlFor="fullwidth">Fullwidth</label>
                   <input
@@ -617,7 +636,7 @@ const FeaturesComponent = () => {
                   />
                 </div>
                 <div className="form-feature-group">
-                  <label htmlFor="top-margin">Top Margin</label>
+                  <label htmlFor="top-margin">Top</label>
                   <input
                     id="top-margin"
                     type="range"
@@ -629,7 +648,7 @@ const FeaturesComponent = () => {
                   />
                 </div>
                 <div className="form-feature-group">
-                  <label htmlFor="bottom-margin">Bottom Margin</label>
+                  <label htmlFor="bottom-margin">Bottom</label>
                   <input
                     id="bottom-margin"
                     type="range"
@@ -659,7 +678,8 @@ const FeaturesComponent = () => {
                 </div>
               </div>
               <div className="feature-adjustment-part">
-                <h5>Show/Hide</h5>
+                <h5 style={{textAlign:"center"}}>Show/Hide</h5>
+                <hr/>
                 <div className="form-checkbox">
                   <label
                     htmlFor="show-feature-title"
@@ -694,7 +714,8 @@ const FeaturesComponent = () => {
                 </div>
               </div>
               <div className="feature-adjustment-part">
-                <h5>Cards</h5>
+                <h5 style={{textAlign:"center"}}>Cards</h5>
+                <hr/>
                 <div className="form-checkbox">
                   <label htmlFor="auto-size" className="form-check-label">
                     AutoSize
@@ -786,9 +807,42 @@ const FeaturesComponent = () => {
                     <option value="right">Right</option>
                   </select>
                 </div>
+                <div className="form-feature-group">
+                      <label htmlFor="feature-columns">Title Size</label>
+                      <select
+                        id="feature-columns"
+                        value={featureCardTitleFontSize}
+                        onChange={(e) =>
+                          setFeatureCardTitleFontSize(e.target.value)
+                        }
+                        className="form-control"
+                        style={{ width: "150px" }}
+                      >
+                        <option value="30px">30px</option>
+                        <option value="26px">26px</option>
+                        <option value="24px">24px</option>
+                      </select>
+                </div>
+                <div className="form-feature-group">
+                      <label htmlFor="feature-columns">Title Size</label>
+                      <select
+                        id="feature-columns"
+                        value={featureCardContentFontSize}
+                        onChange={(e) =>
+                          setFeatureCardContentFontSize(e.target.value)
+                        }
+                        className="form-control"
+                        style={{ width: "150px" }}
+                      >
+                        <option value="16px">16px</option>
+                        <option value="18px">18px</option>
+                        <option value="20px">20px</option>
+                      </select>
+                </div>
               </div>
               <div className="feature-adjustment-part">
-                <h5>Background</h5>
+                <h5 style={{textAlign:"center"}}>Background</h5>
+                <hr/>
                 <div className="form-feature-radio">
                   <label>Image</label>
                   <input
